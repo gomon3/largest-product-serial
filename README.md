@@ -10,4 +10,11 @@ Input Format
 - First line of each test case will contain two integers N & K.
 - Second line of each test case will contain a N digit integer.
 
+Constraints
+-------------
+
+1 <= T <= 100
+1 <= K <= 7
+K <= N <= 1000
+
 
