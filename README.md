@@ -1,2 +1,2 @@
-1. Largest product in a series
 =============
+1. Largest product in a series
