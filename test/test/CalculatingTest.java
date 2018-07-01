@@ -7,6 +7,7 @@ package test;
 
 import largestproduct.Calculating;
 import org.junit.Test;
+import org.junit.Before;
 import static org.junit.Assert.*;
 
 /**
@@ -15,12 +16,17 @@ import static org.junit.Assert.*;
  */
 public class CalculatingTest {
     
+    Calculating c;
+    
+    @Before
+    public void before(){
+        c = new Calculating();
+    }
+    
     @Test
     public void getLargestProductTest(){
-        Calculating c = new Calculating();
-        
         try{
-            //c.setNumber(3675356291l);
+            c.setNumber(3675356291l);
             long actual = c.getLargestProduct();
             
             assertEquals(3150, actual);
