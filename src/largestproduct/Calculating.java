@@ -15,6 +15,8 @@ public class Calculating {
     private int nDig;
     private long n;
     
+    private boolean nDefined = false;
+    
     public Calculating(){
         this.k = 5;
         this.nDig = 10;
@@ -51,13 +53,40 @@ public class Calculating {
         }else{
             
             this.n = n;
+            this.nDefined = true;
             
         }
         
     }
     
-    public long getLargestProduct() {
+    public long getLargestProduct() throws Exception {
         
+        if(this.nDefined){
+            //Realizar proceso
+            String n = Long.toString(this.k);
+            long largesProduct = -10000000000000l;
+            
+            
+            
+            for(int i = 0; i < n.length(); i++){
+                
+                System.out.print(n.charAt(i));
+                
+                
+                if(i == this.k - 1){
+                    System.out.println();
+                    
+                    i = this.k - i;
+                }
+                    
+                
+            }
+            
+            
+            
+        }else{
+            throw new Exception("El número entero de " + this.nDig + " dígitos no está definido");
+        }
         
         
         return this.nDig;

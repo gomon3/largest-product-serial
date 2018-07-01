@@ -17,10 +17,6 @@ public class Principal {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Calculating c = new Calculating();
-        long t = 123456789;
-        
-        c.getLargestProduct();
         
     }
     
