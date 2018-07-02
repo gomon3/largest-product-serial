@@ -6,7 +6,7 @@
 package test;
 
 import java.util.ArrayList;
-import largestproduct.Calculating;
+import largestproduct.calculo.Calculating;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
