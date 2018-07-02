@@ -5,6 +5,7 @@
  */
 package test;
 
+import java.util.ArrayList;
 import largestproduct.Calculating;
 import org.junit.Test;
 import org.junit.Before;
@@ -20,13 +21,17 @@ public class CalculatingTest {
     
     @Before
     public void before(){
-        c = new Calculating();
+        try{
+            c = new Calculating(5, 10, 3675356291l);
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
     
     @Test
     public void getLargestProductTest(){
         try{
-            c.setNumber(3675356291l);
+            
             long actual = c.getLargestProduct();
             
             assertEquals(3150, actual);
@@ -34,6 +39,35 @@ public class CalculatingTest {
         }catch(Exception e){
             fail(e.getMessage());
         }
+    }
+    
+    @Test
+    public void getArrayDigits(){
+        
+        try{
+            
+            ArrayList<String> listActual = c.getArrayDigits();
+            ArrayList<String> listExpected = new ArrayList<>();
+            
+            //3675356291
+            listExpected.add("36753");
+            listExpected.add("67535");
+            listExpected.add("75356");
+            listExpected.add("53562");
+            listExpected.add("35629");
+            listExpected.add("56291");
+            
+            
+            Object[] actuals = listActual.toArray();
+            Object[] expecteds = listExpected.toArray();
+            
+            assertArrayEquals(expecteds, actuals);
+            
+            
+        }catch(Exception e){
+            fail(e.getMessage());
+        }
+        
     }
     
    
