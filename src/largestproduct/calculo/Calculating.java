@@ -68,7 +68,7 @@ public class Calculating {
         if(Long.toString(n).length() != this.nDig){
             
             //throw new Exception("El número ingresado no cumple con el número de dígitos establecido No. Dígitos: " + this.nDig + " :v = " + Long.toString(n).length());
-            throw new Exception("El número ingresado no cumple con el número de dígitos establecido No. Dígitos: " + this.nDig + " :v = " + n);
+            throw new Exception("El número ingresado no cumple con el número de dígitos establecido No. Dígitos: " + this.nDig);
             
         }else{
             

@@ -6,10 +6,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="largestproduct.FXMLMainController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="largestproduct.FXMLMainController">
    <children>
-      <Button layoutX="226.0" layoutY="188.0" mnemonicParsing="false" onAction="#addTestCase" text="Agregar casos de prueba" />
-      <Label layoutX="209.0" layoutY="107.0" text="¿Cuántos casos de prueba deseas?" />
+      <Button fx:id="showInputDialoge" layoutX="226.0" layoutY="188.0" mnemonicParsing="false" onAction="#addTestCase" text="Agregar casos de prueba" />
+      <Label fx:id="instruction" layoutX="209.0" layoutY="107.0" text="¿Cuántos casos de prueba deseas?" />
       <Label fx:id="remainingTestCases" layoutX="38.0" layoutY="25.0" visible="false" />
+      <AnchorPane fx:id="containerTestCase" layoutX="42.0" layoutY="28.0" prefHeight="333.0" prefWidth="511.0" visible="false">
+         <children>
+            <Label layoutX="41.0" layoutY="67.0" text="Ingrese el valor de K" />
+            <TextField fx:id="k" layoutX="196.0" layoutY="63.0" />
+            <Label layoutX="41.0" layoutY="106.0" text="Introduzca el valor de N" />
+            <TextField fx:id="n" layoutX="196.0" layoutY="102.0" onKeyReleased="#recommendationEvent" />
+            <Label fx:id="dynamicInstruction" contentDisplay="CENTER" layoutX="41.0" layoutY="133.0" prefHeight="67.0" prefWidth="127.0" text="Introduzca un número entero de" textAlignment="JUSTIFY" wrapText="true" />
+            <TextField fx:id="number" layoutX="196.0" layoutY="147.0" />
+            <Button layoutX="182.0" layoutY="235.0" mnemonicParsing="false" onAction="#getLargestProduct" text="Obtener producto más grande" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

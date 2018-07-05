@@ -13,8 +13,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.layout.AnchorPane;
+import largestproduct.calculo.Calculating;
 
 /**
  * FXML Controller class
@@ -27,7 +31,16 @@ public class FXMLMainController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    private Label remainingTestCases;
+    private Label remainingTestCases, instruction, dynamicInstruction;
+    
+    @FXML
+    private Button showInputDialoge;
+    
+    @FXML
+    private AnchorPane containerTestCase;
+    
+    @FXML
+    private TextField k, n, number;
     
     
     
@@ -59,6 +72,11 @@ public class FXMLMainController implements Initializable {
                     this.remainingTestCases.setText("Casos de prueba restantes: " + t);
                     this.remainingTestCases.setVisible(true);
                     
+                    this.instruction.setVisible(false);
+                    this.showInputDialoge.setVisible(false);
+                    
+                    this.containerTestCase.setVisible(true);
+                    
                 }
                 
             }catch(Exception ex){
@@ -68,6 +86,58 @@ public class FXMLMainController implements Initializable {
             }
             
         }
+        
+    }
+    
+    @FXML
+    protected void recommendationEvent(){
+        this.dynamicInstruction.setText("Introduzca un número entero de " + this.n.getText() + " dígitos");
+    }
+    
+    @FXML
+    protected void getLargestProduct(ActionEvent e){
+        
+        try{
+            int k = Integer.parseInt(this.k.getText());
+            int nDig = Integer.parseInt(this.n.getText());
+            long n = Long.parseLong(this.number.getText());
+            Calculating c = new Calculating(k, nDig, n);
+            
+            long result = c.getLargestProduct();
+            
+            
+            
+            this.k.setText("");
+            this.n.setText("");
+            this.number.setText("");
+            this.dynamicInstruction.setText("Introduzca un número entero de");
+            
+            this.t--;
+            this.remainingTestCases.setText("Casos de prueba restantes: " + t);
+            
+            
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Diálogo informativo");
+            alert.setHeaderText("De una serie de " + k + " dígitos");
+            alert.setContentText("El producto más grande de la serie es " + result);
+
+            alert.showAndWait();
+            
+            if(this.t <= 0){
+                //Terminaron tus casos de prueba
+                this.containerTestCase.setVisible(false);
+                
+                this.instruction.setVisible(true);
+                this.showInputDialoge.setVisible(true);
+                this.remainingTestCases.setVisible(false);
+                
+            }
+            
+            
+        }catch(Exception ex){
+            showError(ex.getMessage());
+        }
+        
         
     }
     
