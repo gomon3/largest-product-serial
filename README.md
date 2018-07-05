@@ -5,7 +5,7 @@ Find the greatest product of K consecutive digits in the N digit number.
 
 ¿Cómo ejecutar el programa?
 -------------
-El programa del mayor producto de K números consecutivos se ejecuta mediante la consola, si no tiene muchos conocimientos usando programas desarrollados en java le recomiendo: 
+El programa del mayor producto de K números consecutivos se ejecuta mediante una interfaz gráfica, si no tiene muchos conocimientos usando programas desarrollados en java le recomiendo: 
 
 > - Instalar el IDE Netbeans ya sea para Windows o MacOS - Abrir el IDE
 > - Seleccionar en la barra Team-Git-Clone
