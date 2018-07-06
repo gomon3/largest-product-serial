@@ -17,11 +17,18 @@ El programa del mayor producto de K números consecutivos se ejecuta mediante un
 > - Te aparecerá un aviso de que la clonación se ha completado, presiona el boton "Open project"
 > - Cuando termine el proceso presiona el botón de play y el programa comenzará a correr
 
-Constraints
+¿Deseas ejecutar el programa sin clonar el proyecto con NetBeans?
 -------------
 
-- 1 <= T <= 100
-- 1 <= K <= 7
-- K <= N <= 1000
+No te preocupes, no necesitas clonar el proyecto, sigue los siguientes pasos:
+- Dirígete a los releases del repositorio, ahí encontrarás una versión final llamada "LargestProduct.jar"
+- Descárgala o presiona [aquí](https://github.com/gomon3/largest-product-serial/releases/download/v1.0/LargestProduct.jar) para empezar a descargarla
+- Una vez descargada ejecuta los siguientes comandos:
+
+```sh
+$ cd ruta_del_archivo_jar
+$ java -jar LargestProduct.jar
+```
+Después de haber agregado esos comandos el programa deberá empezar a ejecutar, recuerda que debes tener instalada la máquina virtual de java y tener en el PATH de java en el equipo.
 
 
